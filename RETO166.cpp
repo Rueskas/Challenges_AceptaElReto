@@ -1,41 +1,32 @@
-//Sergio Ruescas
+//Rueskas
 #include <iostream>
 using namespace std;
 
 int main()
 {
-
-
-        int inicio, canal, account = 0, account2 = 0;
-        scanf("%d %d",&inicio,&canal);
-        while (inicio != 0 || canal != 0)
+    int channel1, channel2;
+    do
+    {
+        scanf("%d %d",&channel1, &channel2);
+        if(channel1 != 0)
         {
+            if(channel1 < channel2)
+            {
+                int aux = channel2;
+                channel2 = channel1;
+                channel1 = aux;
+            }
             
-        for( int i = inicio ; i != canal; i++)
-        {
-            if ( i == 99)
-                i = 0;
-            account++;
+            if(channel1 - channel2 <= 49)
+            {
+                printf("%d\n", channel1 - channel2);
+            }
+            else
+            {
+                printf("%d\n", 99 - (channel1 - channel2));
+            }
         }
-        
-        for( int i = inicio ; i != canal; i--)
-        {
-            if ( i == 1)
-                i = 100;
-            account2++;
-        }
-        
-        if (account < account2)
-            printf("%d\n", account);
-        else
-            printf("%d\n", account2);
-        
-        account = 0;
-        account2 = 0;
-        
-        scanf("%d %d",&inicio,&canal);
-        }
-
+    } while (channel1 != 0);
     return 0;
 }
 
